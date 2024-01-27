@@ -1,3 +1,7 @@
+"""
+Terminal application that translates english text to 1 of 10 different languages
+"""
+
 from googletrans import Translator
 from pyfiglet import Figlet
 
@@ -19,12 +23,12 @@ language_options = {
     7: "bg",
     8: "fr",
     9: "de",
-    10: "la"
+    10: "la",
 }
 
-play_again = True
+PLAY_AGAIN = True
 
-while play_again:
+while PLAY_AGAIN:
     print("\n>>> MENU <<<\n")
     print("Enter '1' for IGBO")
     print("Enter '2' for SPANISH")
@@ -40,16 +44,15 @@ while play_again:
     user_text = input("Enter text to be translated: ")
     lang_code = int(input("Enter language option: "))
 
-    translation = translator.translate(user_text, src="en", dest=f"{language_options[lang_code]}")
+    translation = translator.translate(
+        user_text, src="en", dest=f"{language_options[lang_code]}"
+    )
 
     print(f"\nYOUR TEXT ({translation.src.upper()}): {user_text}")
     print(f"TRANSLATION ({translation.dest.upper()}): {translation.text}\n")
 
     replay_choice = input("Try another translation? Enter Y/N...: ")  # APP REPLAY
 
-    if replay_choice.upper() == "Y":
-        play_again = True
-    else:
-        play_again = False
+    PLAY_AGAIN = bool(replay_choice.upper() == "Y")
 
 print("Thanks! See you again next time!")  # APP END
