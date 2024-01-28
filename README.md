@@ -10,6 +10,19 @@ Being able to connect with people from different countries is one of the most po
 
 This terminal application utilizes Google Translator's API to convert text from english to one of 10 languages. The original text is displayed with the translated text below. Users have the option to translate as often as they want.
 
+## Quick Start ⚡
+
+If you have Docker installed, you can run this application on your own machine with just 2 steps!
+<br>
+<br>
+Pull the image from Docker Hub
+```python
+docker pull smhussain5/translator-python
+```
+Then run the image as an interactive Docker container
+```python
+docker run --rm -it smhussain5/translator-python
+```
 ## Technologies Used ⚙
 
 - Googletrans
